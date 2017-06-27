@@ -1,0 +1,77 @@
+PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - BaiduMapKit (3.3.2)
+  - DACircularProgress (2.3.1)
+  - EaseUILite (3.3.2):
+    - HyphenateLite (= 3.3.2)
+    - MJRefresh (~> 3.1.0)
+    - MWPhotoBrowser (~> 2.1.1)
+  - HyphenateLite (3.3.2)
+  - IQKeyboardManager (4.0.10)
+  - Masonry (1.0.2)
+  - MBProgressHUD (0.9.2)
+  - MJExtension (3.0.13)
+  - MJRefresh (3.1.12)
+  - MWPhotoBrowser (2.1.2):
+    - DACircularProgress (~> 2.3)
+    - MBProgressHUD (~> 0.9)
+    - SDWebImage (!= 3.7.2, ~> 3.7)
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
+  - YYModel (1.0.4)
+
+DEPENDENCIES:
+  - AFNetworking (~> 3.1.0)
+  - BaiduMapKit (~> 3.3.0)
+  - EaseUILite (from `https://github.com/easemob/easeui-ios-hyphenate-cocoapods.git`)
+  - HyphenateLite (~> 3.3.2)
+  - IQKeyboardManager (~> 4.0.7)
+  - Masonry (~> 1.0.0)
+  - MBProgressHUD (~> 0.9)
+  - MJExtension (~> 3.0.13)
+  - MJRefresh (~> 3.1.0)
+  - SDWebImage (~> 3.7)
+  - YYModel (~> 1.0.1)
+
+EXTERNAL SOURCES:
+  EaseUILite:
+    :git: https://github.com/easemob/easeui-ios-hyphenate-cocoapods.git
+
+CHECKOUT OPTIONS:
+  EaseUILite:
+    :commit: 76a8e6498e0d92a273c206df0c066a7179785283
+    :git: https://github.com/easemob/easeui-ios-hyphenate-cocoapods.git
+
+SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  BaiduMapKit: 5118390d63b375483bd64c963e8e32a40fd9ddb5
+  DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
+  EaseUILite: 8d6a329f3169e8f12917be1331061fa780b1e71f
+  HyphenateLite: 54ffda162deec2cedf156185a707b86678ae914a
+  IQKeyboardManager: 593ee99b88381f4b9ccb22bd680f22606351bd41
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
+  MJExtension: 5932755f451458eefa24239358817f8d291240c7
+  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  MWPhotoBrowser: 5836d7aa041dc05a13de380c246826578adc5ea5
+  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
+
+PODFILE CHECKSUM: 700de2b3381d1efa3381e8070d6fd04d3c0f5cd9
+
+COCOAPODS: 1.2.1
