@@ -36,11 +36,12 @@
     
     //创建UI
     [self SetUpUI];
-//    self.finishedBtn = [CYTUtiltyHelper addbuttonWithRect:CGRectMake(FitwidthRealValue(15), CYTMainScreen_HEIGHT - FitheightRealValue(54), CYTMainScreen_WIDTH - FitwidthRealValue(30), FitheightRealValue(44)) LabelText:@"完成" TextFont:FitFont(16) NormalTextColor:whiteColor highLightTextColor:whiteColor NormalBgColor:NavigationBarBackgroundColor highLightBgColor:NavigationBarBackgroundColor tag:125 SuperView:self CornerRadius:3 buttonTarget:self Action:@selector(finishAclcik:)];
+    
     
     [UIView animateKeyframesWithDuration:0.3 delay:0 options:UIViewKeyframeAnimationOptionCalculationModeLinear animations:^{
         self.bgView.alpha = 0.4;
-        self.dateView.y = CYTMainScreen_HEIGHT / 5;
+//        self.dateView.y = CYTMainScreen_HEIGHT / 5;
+        self.dateView.frame = CGRectMake(0, CYTMainScreen_HEIGHT / 5, CYTMainScreen_WIDTH, CYTMainScreen_HEIGHT * 4 / 5);
     } completion:NULL];
     
 }
@@ -81,30 +82,36 @@
     view.manager.selectionType = ZYCalendarSelectionTypeRange;
     
     // 设置被选中颜色
-     view.manager.selectedBackgroundColor = NavigationBarBackgroundColor;
+    view.manager.selectedBackgroundColor = NavigationBarBackgroundColor;
     
     // 设置当前日期 请在所有参数设置完之后设置日期
     view.date = [NSDate date];
+    
     view.dayViewBlock = ^(ZYCalendarManager *manager, NSDate *dayDate) {
-
+        
         if (manager.selectedDateArray.count == 2) {
             NSString *startTime = [manager.dateFormatter stringFromDate:manager.selectedDateArray[0]];
             NSString *endTime = [manager.dateFormatter stringFromDate:manager.selectedDateArray[1]];
             if (_block) {
                 _block(startTime,endTime);
             }
+//完成按钮
+            self.finishedBtn = [CYTUtiltyHelper addbuttonWithRect:CGRectMake(FitwidthRealValue(15), CYTMainScreen_HEIGHT - FitheightRealValue(54), CYTMainScreen_WIDTH - FitwidthRealValue(30), FitheightRealValue(44)) LabelText:@"完成" TextFont:FitFont(16) NormalTextColor:whiteColor highLightTextColor:whiteColor NormalBgColor:NavigationBarBackgroundColor highLightBgColor:NavigationBarBackgroundColor tag:125 SuperView:self CornerRadius:3 buttonTarget:self Action:@selector(finishAclcik:)];
+        }else {
+            self.finishedBtn = [CYTUtiltyHelper addbuttonWithRect:CGRectMake(FitwidthRealValue(15), CYTMainScreen_HEIGHT, CYTMainScreen_WIDTH - FitwidthRealValue(30), FitheightRealValue(44)) LabelText:@"完成" TextFont:FitFont(16) NormalTextColor:whiteColor highLightTextColor:whiteColor NormalBgColor:NavigationBarBackgroundColor highLightBgColor:NavigationBarBackgroundColor tag:125 SuperView:self CornerRadius:3 buttonTarget:self Action:@selector(finishAclcik:)];
+
         }
     };
     [self.dateView addSubview:view];
     
 }
 
-- (void)finishAclcik:(UIButton *)Btn {
-    [self dismissWithBlock:nil];
-}
-
 - (void)getDeliveryTime:(chooseDeliveryTime)callBack {
     _block = callBack;
+}
+
+- (void)finishAclcik:(UIButton *)btn {
+    [self dismissWithBlock:nil];
 }
 
 - (void)dismiss {
@@ -113,7 +120,9 @@
 
 - (void)dismissWithBlock:(void(^)())block {
     [UIView animateKeyframesWithDuration:0.3 delay:0 options:UIViewKeyframeAnimationOptionCalculationModeLinear animations:^{
-        self.dateView.y = CYTMainScreen_HEIGHT;
+//        self.dateView.y = CYTMainScreen_HEIGHT;
+        self.dateView.frame = CGRectMake(0, CYTMainScreen_HEIGHT, CYTMainScreen_WIDTH, CYTMainScreen_HEIGHT * 4 / 5);
+        self.finishedBtn.frame = CGRectMake(FitwidthRealValue(15), CYTMainScreen_HEIGHT, CYTMainScreen_WIDTH - FitwidthRealValue(30), FitheightRealValue(44));
         self.bgView.alpha = 0.0;
     } completion:^(BOOL finished) {
         if (finished) {

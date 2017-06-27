@@ -13,7 +13,7 @@ typedef void (^chooseDeliveryTime) (NSString *startTime, NSString *endTime);
 
 @property (nonatomic, strong) UIView *bgView;
 @property (nonatomic, strong) UIView *dateView;
-//@property (nonatomic, strong) UIButton *finishedBtn;
+@property (nonatomic, strong) UIButton *finishedBtn;
 
 
 - (void)showInView:(UIView *)view;

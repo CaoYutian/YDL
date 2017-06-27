@@ -548,8 +548,6 @@
 		AE35B0941F0234690062B3E8 /* YDL */ = {
 			isa = PBXGroup;
 			children = (
-				AE35B0A11F0234690062B3E8 /* Assets.xcassets */,
-				AE35B27E1F0238E60062B3E8 /* Utils */,
 				AE35B0AE1F02381F0062B3E8 /* AppDelegate */,
 				AE35B0B81F0238740062B3E8 /* Macro */,
 				AE35B0BE1F02388A0062B3E8 /* Base */,
@@ -558,6 +556,7 @@
 				AE35B1A31F0238B40062B3E8 /* Managers */,
 				AE35B1B01F0238B40062B3E8 /* Models */,
 				AE35B1C11F0238E60062B3E8 /* Component */,
+				AE35B27E1F0238E60062B3E8 /* Utils */,
 				AE35B27B1F0238E60062B3E8 /* Libs */,
 				AE35B27C1F0238E60062B3E8 /* Resources */,
 				AE35B0951F0234690062B3E8 /* Supporting Files */,
@@ -568,6 +567,7 @@
 		AE35B0951F0234690062B3E8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AE35B0A11F0234690062B3E8 /* Assets.xcassets */,
 				AE35B0AD1F0237E50062B3E8 /* PrefixHeader.pch */,
 				AE35B09E1F0234690062B3E8 /* Main.storyboard */,
 				AE35B0A31F0234690062B3E8 /* LaunchScreen.storyboard */,
@@ -580,12 +580,12 @@
 		AE35B0AE1F02381F0062B3E8 /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
+				AE35B0B31F02381F0062B3E8 /* AppDelegate.h */,
+				AE35B0B41F02381F0062B3E8 /* AppDelegate.m */,
 				AE35B0AF1F02381F0062B3E8 /* AppDelegate+IM.h */,
 				AE35B0B01F02381F0062B3E8 /* AppDelegate+IM.m */,
 				AE35B0B11F02381F0062B3E8 /* AppDelegate+ThreeDTouch.h */,
 				AE35B0B21F02381F0062B3E8 /* AppDelegate+ThreeDTouch.m */,
-				AE35B0B31F02381F0062B3E8 /* AppDelegate.h */,
-				AE35B0B41F02381F0062B3E8 /* AppDelegate.m */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -658,10 +658,10 @@
 		AE35B0D41F02388A0062B3E8 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				AE35B0D51F02388A0062B3E8 /* CollectionItem */,
-				AE35B0F01F02388A0062B3E8 /* Goods */,
 				AE35B1031F02388A0062B3E8 /* HomeVC.h */,
 				AE35B1041F02388A0062B3E8 /* HomeVC.m */,
+				AE35B0D51F02388A0062B3E8 /* CollectionItem */,
+				AE35B0F01F02388A0062B3E8 /* Goods */,
 				AE35B1051F02388A0062B3E8 /* Message */,
 				AE35B10E1F02388A0062B3E8 /* SubView */,
 				AE35B1111F02388A0062B3E8 /* WebView */,
@@ -800,9 +800,9 @@
 		AE35B1171F02388A0062B3E8 /* Mine */ = {
 			isa = PBXGroup;
 			children = (
-				AE35B1181F02388A0062B3E8 /* Address */,
 				AE35B1231F02388A0062B3E8 /* MineVC.h */,
 				AE35B1241F02388A0062B3E8 /* MineVC.m */,
+				AE35B1181F02388A0062B3E8 /* Address */,
 				AE35B1251F02388A0062B3E8 /* MyInvoice */,
 				AE35B12A1F02388A0062B3E8 /* QualificationCertification */,
 				AE35B1341F02388A0062B3E8 /* Set */,
