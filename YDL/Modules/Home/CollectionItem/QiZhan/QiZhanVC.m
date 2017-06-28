@@ -7,6 +7,9 @@
 //
 
 #import "QiZhanVC.h"
+#import "MallVC.h"
+#import "QiuGouVC.h"
+
 #import "QiZhanFooterView.h"
 @interface QiZhanVC ()<LLNoDataViewTouchDelegate>
 
@@ -47,25 +50,45 @@
     
     QiZhanFooterView *footView = [[QiZhanFooterView alloc] initWithFrame:CGRectMake(0, CYTMainScreen_HEIGHT - 49, CYTMainScreen_WIDTH, 49)];
     [self.view addSubview:footView];
+    [footView functionChooseCallBack:^(NSInteger choose) {
+        switch (choose) {
+            case 0:
+                [self buyNowAction];
+                break;
+                
+            case 1:
+                [self separateBuyAction];
+                break;
+                
+            case 2:
+                [self largeBuyAction];
+                break;
+        }
+    }];
 }
 
+#pragma mark 切换分段选择器
 - (void)segmentValuechanged:(UISegmentedControl *)segment {
     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark 立即采购
+- (void)buyNowAction {
+    [self pushVc:[MallVC new]];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark 散单求购
+- (void)separateBuyAction {
+    QiuGouVC *QiuGou = [[QiuGouVC alloc] init];
+    QiuGou.BuyType = separateBuy;
+    [self pushVc:QiuGou];
 }
-*/
+
+#pragma mark 大单求购
+- (void)largeBuyAction {
+    QiuGouVC *QiuGou = [[QiuGouVC alloc] init];
+    QiuGou.BuyType = largeBuy;
+    [self pushVc:QiuGou];
+}
 
 @end

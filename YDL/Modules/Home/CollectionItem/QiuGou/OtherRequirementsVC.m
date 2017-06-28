@@ -7,22 +7,27 @@
 //
 
 #import "OtherRequirementsVC.h"
+#import "UIBarButtonItem+Addition.h"
 
 @interface OtherRequirementsVC ()
-
-@property (nonatomic, strong) UITextView *textViewLength;
-@property (nonatomic, strong) UILabel *ploLabel;
-@property (nonatomic, strong) UILabel *wordLabelCount;
-
 
 @end
 
 @implementation OtherRequirementsVC
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self.textViewLength resignFirstResponder];
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [self.textViewLength becomeFirstResponder];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(textViewDidChange:) name:UITextViewTextDidChangeNotification object:nil];
 
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTitle:@"保存" target:self action:@selector(saveClick:) tintColor:whiteColor];
 }
 
 - (void)SetUpUI {
@@ -34,18 +39,22 @@
     self.textViewLength.layer.masksToBounds = YES;
     self.textViewLength.font = FitFont(14);
     [self.view addSubview:self.textViewLength];
-    
-    self.ploLabel = [CYTUtiltyHelper addLabelWithFrame:CGRectMake(FitwidthRealValue(15), 0, self.textViewLength.width - FitwidthRealValue(20), self.textViewLength.height) LabelFont:FitFont(14) LabelTextColor:[UIColor grayColor] LabelTextAlignment:NSTextAlignmentLeft SuperView:self.view LabelTag:1000 LabelText:@"请输反馈信息"];
 
+    self.ploLabel = [CYTUtiltyHelper addLabelWithFrame:CGRectMake(FitwidthRealValue(15), 0, self.textViewLength.width - FitwidthRealValue(20), self.textViewLength.height) LabelFont:FitFont(14) LabelTextColor:[UIColor grayColor] LabelTextAlignment:NSTextAlignmentLeft SuperView:self.view LabelTag:1000 LabelText:@"请输反馈信息"];
+    
     self.wordLabelCount = [[UILabel alloc] initWithFrame:CGRectMake(CYTMainScreen_WIDTH - FitwidthRealValue(60), self.textViewLength.bottom - FitheightRealValue(20), FitwidthRealValue(80), FitheightRealValue(20))];
     self.wordLabelCount.textColor = [UIColor orangeColor];
     self.wordLabelCount.text = @"200";
     [self.view addSubview:self.wordLabelCount];
     
+    if (self.distriText.length) {
+        self.textViewLength.text = self.distriText;
+        self.ploLabel.text = @"";
+        self.wordLabelCount.text = [NSString stringWithFormat:@"%lu",200 - self.textViewLength.text.length];
+    }
 }
 
 #pragma mark - 当textField布局发生改变的时候调用
-
 - (void)textViewDidChange:(UITextView *)textView {
 //对占位符的显示和隐藏做判断
     if (self.textViewLength.text.length == 0) {
@@ -87,5 +96,11 @@
     
 }
 
+- (void)saveClick:(UIButton *)btn {
+    if (self.block) {
+        self.block(self.textViewLength.text);
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
 
 @end

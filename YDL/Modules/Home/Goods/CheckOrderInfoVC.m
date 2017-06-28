@@ -12,29 +12,13 @@
 
 #import "MyInvoiceVC.h"
 #import "AddressVC.h"
-
+#import "OtherRequirementsVC.h"
 #import "WSDatePickerView.h"
 
 
 @interface CheckOrderInfoVC ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,PopUpMenuDelegate,PopUpMenuDataSource,ActionSheetViewDelegate>
-@property (nonatomic, strong) UITableView *TableView;
-@property (nonatomic, strong) NSArray *titleArr;
-
-@property (nonatomic, strong) UILabel *distributionStyle;    //配送方式
-@property (nonatomic, strong) UILabel *address;
-@property (nonatomic, strong) UITextField *quantityTf;
-@property (nonatomic, strong) UILabel *time;
-@property (nonatomic, strong) UILabel *invoiceInfo;
-@property (nonatomic, strong) UILabel *isHost;
-
-@property (nonatomic, strong) UIView *footView;
-@property (nonatomic, strong) UILabel *totalPrice;
-@property (nonatomic, strong) UIButton *submitOrder;
-
 @property (nonatomic, strong) PopUpPickerView *DMPickerView;
 @property (nonatomic, strong) PopUpPickerView *isHostPickerView;
-@property (nonatomic, strong) NSArray *DMArr;               //配送方式Data
-@property (nonatomic, strong) NSArray *isHostArr;          //付款方式Data
 
 @end
 
@@ -111,13 +95,17 @@
             break;
             
         case 4:
-            self.invoiceInfo = [CYTUtiltyHelper addLabelWithFrame:CGRectMake(CYTMainScreen_WIDTH - FitwidthRealValue(200), 0, FitwidthRealValue(170), FitheightRealValue(44)) LabelFont:FitFont(14) LabelTextColor:blackColor LabelTextAlignment:NSTextAlignmentRight SuperView:cell.contentView LabelTag:112 LabelText:@""];
+            self.invoiceInfo = [CYTUtiltyHelper addLabelWithFrame:CGRectMake(CYTMainScreen_WIDTH - FitwidthRealValue(200), 0, FitwidthRealValue(170), FitheightRealValue(44)) LabelFont:FitFont(14) LabelTextColor:blackColor LabelTextAlignment:NSTextAlignmentRight SuperView:cell.contentView LabelTag:113 LabelText:@""];
 
             break;
         
         case 5:
-            self.isHost = [CYTUtiltyHelper addLabelWithFrame:CGRectMake(CYTMainScreen_WIDTH - FitwidthRealValue(200), 0, FitwidthRealValue(170), FitheightRealValue(44)) LabelFont:FitFont(14) LabelTextColor:blackColor LabelTextAlignment:NSTextAlignmentRight SuperView:cell.contentView LabelTag:112 LabelText:@""];
+            self.isHost = [CYTUtiltyHelper addLabelWithFrame:CGRectMake(CYTMainScreen_WIDTH - FitwidthRealValue(200), 0, FitwidthRealValue(170), FitheightRealValue(44)) LabelFont:FitFont(14) LabelTextColor:blackColor LabelTextAlignment:NSTextAlignmentRight SuperView:cell.contentView LabelTag:114 LabelText:@""];
 
+            break;
+            
+        case 6:
+            self.message = [CYTUtiltyHelper addLabelWithFrame:CGRectMake(CYTMainScreen_WIDTH - FitwidthRealValue(275), 0, FitwidthRealValue(250), FitheightRealValue(44)) LabelFont:FitFont(14) LabelTextColor:blackColor LabelTextAlignment:NSTextAlignmentRight SuperView:cell.contentView LabelTag:115 LabelText:@""];
             break;
     }
     
@@ -152,6 +140,10 @@
         case 5:
             [self.isHostPickerView show];
             break;
+            
+        case 6:
+            [self leaveAMessage];
+            break;
     }
     
 }
@@ -164,6 +156,19 @@
     }];
     datepicker.doneButtonColor = [UIColor orangeColor];//确定按钮的颜色
     [datepicker show];
+}
+
+#pragma mark 留言
+- (void)leaveAMessage {
+    
+    OtherRequirementsVC *OtherRequirements = [[OtherRequirementsVC alloc] init];
+    OtherRequirements.title = @"给卖家留言";
+    [OtherRequirements setBlock:^(NSString *distriText){
+        self.message.text = distriText;
+    }];
+    OtherRequirements.distriText = self.message.text;
+    [self pushVc:OtherRequirements];
+
 }
 
 #pragma mark 提交订单
@@ -228,8 +233,8 @@
 
 - (NSArray *)titleArr {
     if (!_titleArr) {
-        _titleArr = @[@"配送方式", @"收货方式", @"购买数量",@"要求到岸时间"
-                      ,@"发票信息", @"是否托运"];
+        _titleArr = @[@"配送方式", @"收货地址", @"购买数量",@"要求到岸时间"
+                      ,@"发票信息", @"是否托运",@"给卖家留言"];
     }
     return _titleArr;
 }

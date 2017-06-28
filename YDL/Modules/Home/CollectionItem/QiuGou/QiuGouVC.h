@@ -9,8 +9,8 @@
 #import "BaseVC.h"
 
 typedef NS_ENUM(NSInteger, QiuGouType) {
-    LargeBuy,           //大单
-    SeparateBuy         //散单
+    largeBuy,           //大单
+    separateBuy         //散单
 };
 
 @interface QiuGouVC : BaseVC

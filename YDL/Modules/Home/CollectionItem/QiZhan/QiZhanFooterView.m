@@ -62,7 +62,6 @@
 }
 
 - (void)tapCellView:(UIGestureRecognizer *)tap {
-    
     NSInteger index = tap.view.tag - 100;
     switch (index) {
         case 0:
@@ -82,12 +81,7 @@
                 _block(2);
             }
             break;
-            
-        case 3:
-            if (_block) {
-                _block(3);
-            }
-            break;
+
     }
     
 }

@@ -45,4 +45,6 @@
 
 @property (nonatomic, strong) UIButton *BottomBtn;
 
+@property (nonatomic, assign) NSUInteger selectedIndex;
+
 @end

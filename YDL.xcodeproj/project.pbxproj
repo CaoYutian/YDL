@@ -2033,7 +2033,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/YDL/Component/Classes/XLYBankCardMessage",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = CYT.YDL;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ailng.ydl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -2053,7 +2053,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/YDL/Component/Classes/XLYBankCardMessage",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = CYT.YDL;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ailng.ydl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

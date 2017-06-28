@@ -16,7 +16,6 @@
 #import "MyInvoiceVC.h"
 #import "OtherRequirementsVC.h"
 
-
 @interface QiuGouVC ()<UITableViewDelegate,UITableViewDataSource,PopUpMenuDelegate,PopUpMenuDataSource,ActionSheetViewDelegate,UITextFieldDelegate>
 @property (nonatomic, strong) PopUpPickerView *DMPickerView;
 @property (nonatomic, strong) PopUpPickerView *paymentPickerView;
@@ -44,21 +43,14 @@
     [CYTUtiltyHelper addbuttonWithRect:CGRectMake(0, CYTMainScreen_HEIGHT - FitheightRealValue(40), CYTMainScreen_WIDTH, FitheightRealValue(40)) LabelText:@"发布求购" TextFont:FitFont(14) NormalTextColor:whiteColor highLightTextColor:whiteColor NormalBgColor:NavigationBarBackgroundColor highLightBgColor:NavigationBarBackgroundColor tag:130 SuperView:self.view buttonTarget:self Action:@selector(releaseDemand:)];
     
     LargeClassMenuView *LargeClassView = [[LargeClassMenuView alloc] initWithFrame:CGRectMake(0, 0,80, 44) titles:@[@"大单",@"散单"]];
-    self.BuyType = LargeBuy;
-    LargeClassView.selectedAtIndex = ^(int index) {
-        switch (index) {
-            case 0:
-                self.BuyType = LargeBuy;
-                break;
-                
-            case 1:
-                self.BuyType = SeparateBuy;
-                break;
-        }
-        [self.tableView reloadData];
-    };
     self.navigationItem.titleView = LargeClassView;
-    
+   LargeClassView.selectedIndex = (self.BuyType == largeBuy ? 0 : 1);
+    LargeClassView.selectedAtIndex = ^(int index) {
+
+        self.BuyType = (index == 0 ? largeBuy : separateBuy);
+        [self.tableView reloadData];
+        
+    };
 }
 
 - (void)releaseDemand:(UIButton *)Btn {
@@ -67,7 +59,7 @@
 
 #pragma mark - UITableViewDataSource
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (self.BuyType == LargeBuy) {
+    if (self.BuyType == largeBuy) {
         if (section == 0) {
             return self.XieQiDianArr.count;
         }if (section == 1) {
@@ -83,7 +75,7 @@
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    if (self.BuyType == LargeBuy) {
+    if (self.BuyType == largeBuy) {
         return 4;
     }else {
         return self.spTitleArr.count;
@@ -95,7 +87,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    if (self.BuyType == LargeBuy) {
+    if (self.BuyType == largeBuy) {
         if (section < 2) {
             return FitheightRealValue(44);
         }else if (section == 2){
@@ -111,7 +103,7 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     
-    if (self.BuyType == LargeBuy) {
+    if (self.BuyType == largeBuy) {
         if (section == 0) {
             UIView *headeView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CYTMainScreen_WIDTH, FitheightRealValue(44))];
             headeView.backgroundColor = whiteColor;
@@ -153,7 +145,7 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if (self.BuyType == LargeBuy) {
+    if (self.BuyType == largeBuy) {
         if (indexPath.section == 0){
             static NSString *cellId = @"QIYuanDiOfQiuGouCell";
             
@@ -233,7 +225,7 @@
                     
                 case 7:
                     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-                    
+                    self.otherNeed = [CYTUtiltyHelper addLabelWithFrame:CGRectMake(CYTMainScreen_WIDTH - FitwidthRealValue(330), 0, FitwidthRealValue(300), FitheightRealValue(44)) LabelFont:FitFont(14) LabelTextColor:blackColor LabelTextAlignment:NSTextAlignmentRight SuperView:cell.contentView LabelTag:126 LabelText:@""];
                     break;
             }
             
@@ -319,7 +311,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    if (self.BuyType == LargeBuy) {
+    if (self.BuyType == largeBuy) {
         if (indexPath.section == 3) {
             switch (indexPath.row) {
                 case 1:
@@ -385,6 +377,10 @@
 - (void)OtherRequirements {
     OtherRequirementsVC *OtherRequirements = [[OtherRequirementsVC alloc] init];
     OtherRequirements.title = @"其他需求";
+    [OtherRequirements setBlock:^(NSString *distriText){
+        self.otherNeed.text = distriText;
+    }];
+    OtherRequirements.distriText = self.otherNeed.text;
     [self pushVc:OtherRequirements];
 }
 

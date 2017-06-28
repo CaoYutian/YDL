@@ -18,5 +18,6 @@
 @property (nonatomic, strong) UITextField *contactNameTf;
 @property (nonatomic, strong) UITextField *contactPhoneNumTf;
 @property (nonatomic, strong) UITextField *applyReasonTf;
+@property (nonatomic, strong) UILabel *applayReason;
 
 @end

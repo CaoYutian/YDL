@@ -14,7 +14,6 @@ static const CGFloat kKTDropdownMenuViewAutoHideHeight = 30;
 @interface LargeClassMenuView()<UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, copy) NSArray *titles;
-@property (nonatomic, assign) NSUInteger selectedIndex;
 @property (nonatomic, strong) UIButton *titleButton;
 @property (nonatomic, strong) UIImageView *arrowImageView;
 @property (nonatomic, strong) UITableView *tableView;
@@ -36,9 +35,8 @@ static const CGFloat kKTDropdownMenuViewAutoHideHeight = 30;
         _backgroundAlpha = 0.3;
         _cellHeight = 44;
         _isMenuShow = NO;
-        _selectedIndex = 0;
+//        _selectedIndex = 0;
         _titles = titles;
-        
         [self addSubview:self.titleButton];
         [self addSubview:self.arrowImageView];
         [self.wrapperView addSubview:self.backgroundView];
@@ -117,8 +115,7 @@ static const CGFloat kKTDropdownMenuViewAutoHideHeight = 30;
         return;
     
     // 这个就算看不见也需要处理
-    if ([keyPath isEqualToString:@"contentOffset"])
-    {
+    if ([keyPath isEqualToString:@"contentOffset"]) {
         CGPoint newOffset = [[change valueForKey:@"new"] CGPointValue];
         if (newOffset.y > kKTDropdownMenuViewAutoHideHeight)
         {
@@ -128,7 +125,6 @@ static const CGFloat kKTDropdownMenuViewAutoHideHeight = 30;
 }
 
 #pragma mark -- UITableViewDataSource --
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.titles.count;
 }
@@ -161,22 +157,17 @@ static const CGFloat kKTDropdownMenuViewAutoHideHeight = 30;
     return cell;
 }
 
-
 #pragma mark -- UITableViewDataDelegate --
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     self.selectedIndex = indexPath.row;
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    if (self.selectedAtIndex)
-    {
+    if (self.selectedAtIndex){
         self.selectedAtIndex((int)indexPath.row);
     }
 }
 
 #pragma mark -- handle actions --
-
-- (void)handleTapOnTitleButton:(UIButton *)button
-{
+- (void)handleTapOnTitleButton:(UIButton *)button {
     self.isMenuShow = !self.isMenuShow;
 }
 
@@ -291,7 +282,6 @@ static const CGFloat kKTDropdownMenuViewAutoHideHeight = 30;
     return _cellAccessoryCheckmarkColor;
 }
 
-
 @synthesize textColor = _textColor;
 - (UIColor *)textColor
 {
@@ -345,8 +335,7 @@ static const CGFloat kKTDropdownMenuViewAutoHideHeight = 30;
 }
 
 - (UIImageView *)arrowImageView{
-    if (!_arrowImageView)
-    {
+    if (!_arrowImageView) {
 //        NSString * bundlePath = [[NSBundle mainBundle] pathForResource:@"KTDropdownMenuView" ofType:@"bundle"];
 //        NSString *imgPath = [bundlePath stringByAppendingPathComponent:@"arrow_down_icon.png"];
 //        UIImage *image = [UIImage imageWithContentsOfFile:imgPath];

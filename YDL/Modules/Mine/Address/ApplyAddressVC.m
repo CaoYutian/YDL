@@ -130,6 +130,8 @@
             break;
             
         case 8:
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            self.applayReason = [CYTUtiltyHelper addLabelWithFrame:CGRectMake(CYTMainScreen_WIDTH - FitwidthRealValue(330), 0, FitwidthRealValue(300), FitheightRealValue(44)) LabelFont:FitFont(14) LabelTextColor:blackColor LabelTextAlignment:NSTextAlignmentRight SuperView:cell.contentView LabelTag:405 LabelText:@""];
 
             break;
 
@@ -156,7 +158,7 @@
             break;
             
         case 8:
-            [self applayReason];
+            [self applayReasonAction];
             break;
     }
     
@@ -174,9 +176,13 @@
 }
 
 #pragma mark 申请原因
-- (void)applayReason {
+- (void)applayReasonAction {
     OtherRequirementsVC *OtherRequirements = [[OtherRequirementsVC alloc] init];
-    OtherRequirements.title = @"申请原因";
+    OtherRequirements.title = @"其他需求";
+    [OtherRequirements setBlock:^(NSString *distriText){
+        self.applayReason.text = distriText;
+    }];
+    OtherRequirements.distriText = self.applayReason.text;
     [self pushVc:OtherRequirements];
 }
 

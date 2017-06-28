@@ -83,18 +83,15 @@
     NSLog(@"程序暂停");
 }
 
-
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     NSLog(@"程序进入后台");
     [self IMapplicationDidEnterBackground:application];
 }
 
-
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     NSLog(@"程序回到前台");
     [self IMapplicationWillEnterForeground:application];
 }
-
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     NSLog(@"程序激活");
