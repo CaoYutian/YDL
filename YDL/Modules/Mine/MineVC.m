@@ -54,8 +54,8 @@
     HeaderOfmine *hearderView = [[HeaderOfmine alloc] initWithFrame:CGRectMake(0, 0, CYTMainScreen_WIDTH, FitheightRealValue(130))];
     [hearderView callBack:^(BOOL isClick) {
         if (isClick) {
-            [self presentVc:[LogInVC new]];
-//            [self pushVc:[UserInfoVC new]];
+            LogInVC *logIn = [LogInVC new];
+            [self presentVc:logIn];
         }
     }];
     self.MineTableView.tableHeaderView = hearderView;

@@ -170,6 +170,10 @@
 		AE35B2DE1F0238E60062B3E8 /* GetEquipmentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AE35B28C1F0238E60062B3E8 /* GetEquipmentModel.m */; };
 		AE35B2DF1F0238E60062B3E8 /* KeyChainManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AE35B28E1F0238E60062B3E8 /* KeyChainManager.m */; };
 		AE35B2E01F0238E60062B3E8 /* ViewHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AE35B2901F0238E60062B3E8 /* ViewHelper.m */; };
+		AE6414001F04A370000E5A85 /* logInView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6413FF1F04A370000E5A85 /* logInView.m */; };
+		AE6414031F04CAE3000E5A85 /* ForgotPwVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6414021F04CAE3000E5A85 /* ForgotPwVC.m */; };
+		AE6414061F04DB18000E5A85 /* RegisterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6414051F04DB18000E5A85 /* RegisterVC.m */; };
+		AE64140A1F04DE8E000E5A85 /* NSString+Judge.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6414091F04DE8E000E5A85 /* NSString+Judge.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -494,6 +498,14 @@
 		AE35B28E1F0238E60062B3E8 /* KeyChainManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyChainManager.m; sourceTree = "<group>"; };
 		AE35B28F1F0238E60062B3E8 /* ViewHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewHelper.h; sourceTree = "<group>"; };
 		AE35B2901F0238E60062B3E8 /* ViewHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewHelper.m; sourceTree = "<group>"; };
+		AE6413FE1F04A370000E5A85 /* logInView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = logInView.h; sourceTree = "<group>"; };
+		AE6413FF1F04A370000E5A85 /* logInView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = logInView.m; sourceTree = "<group>"; };
+		AE6414011F04CAE3000E5A85 /* ForgotPwVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgotPwVC.h; sourceTree = "<group>"; };
+		AE6414021F04CAE3000E5A85 /* ForgotPwVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotPwVC.m; sourceTree = "<group>"; };
+		AE6414041F04DB18000E5A85 /* RegisterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterVC.h; sourceTree = "<group>"; };
+		AE6414051F04DB18000E5A85 /* RegisterVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterVC.m; sourceTree = "<group>"; };
+		AE6414081F04DE8E000E5A85 /* NSString+Judge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Judge.h"; sourceTree = "<group>"; };
+		AE6414091F04DE8E000E5A85 /* NSString+Judge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Judge.m"; sourceTree = "<group>"; };
 		CB906C5BC2C5797EED9B357E /* Pods-YDL.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YDL.release.xcconfig"; path = "Pods/Target Support Files/Pods-YDL/Pods-YDL.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -793,6 +805,12 @@
 			children = (
 				AE35B1151F02388A0062B3E8 /* LogInVC.h */,
 				AE35B1161F02388A0062B3E8 /* LogInVC.m */,
+				AE6413FE1F04A370000E5A85 /* logInView.h */,
+				AE6413FF1F04A370000E5A85 /* logInView.m */,
+				AE6414011F04CAE3000E5A85 /* ForgotPwVC.h */,
+				AE6414021F04CAE3000E5A85 /* ForgotPwVC.m */,
+				AE6414041F04DB18000E5A85 /* RegisterVC.h */,
+				AE6414051F04DB18000E5A85 /* RegisterVC.m */,
 			);
 			path = LogIn;
 			sourceTree = "<group>";
@@ -1061,6 +1079,7 @@
 		AE35B1C31F0238E60062B3E8 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				AE6414071F04DE78000E5A85 /* NSString */,
 				AE35B1C41F0238E60062B3E8 /* NSObject */,
 				AE35B1C91F0238E60062B3E8 /* NSTimer */,
 			);
@@ -1622,6 +1641,15 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		AE6414071F04DE78000E5A85 /* NSString */ = {
+			isa = PBXGroup;
+			children = (
+				AE6414081F04DE8E000E5A85 /* NSString+Judge.h */,
+				AE6414091F04DE8E000E5A85 /* NSString+Judge.m */,
+			);
+			path = NSString;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1809,6 +1837,7 @@
 				AE35B1BF1F0238B40062B3E8 /* GoodsModel.m in Sources */,
 				AE35B2A31F0238E60062B3E8 /* ChatUIHelper.m in Sources */,
 				AE35B1891F02388B0062B3E8 /* ApplyAddressVC.m in Sources */,
+				AE6414031F04CAE3000E5A85 /* ForgotPwVC.m in Sources */,
 				AE35B2DB1F0238E60062B3E8 /* CYTMD5.m in Sources */,
 				AE35B1BE1F0238B40062B3E8 /* GoodsDynamicModel.m in Sources */,
 				AE35B2B91F0238E60062B3E8 /* MMCombinationFitlerView.m in Sources */,
@@ -1858,7 +1887,9 @@
 				AE35B2A01F0238E60062B3E8 /* ActionSheetCustomPicker.m in Sources */,
 				AE35B1711F02388B0062B3E8 /* QIYuanDiOfQiuGouCell.m in Sources */,
 				AE35B17A1F02388B0062B3E8 /* LNGInfoCell.m in Sources */,
+				AE6414001F04A370000E5A85 /* logInView.m in Sources */,
 				AE35B2BF1F0238E60062B3E8 /* MMSingleFitlerView.m in Sources */,
+				AE6414061F04DB18000E5A85 /* RegisterVC.m in Sources */,
 				AE35B1651F02388B0062B3E8 /* UINavigationBar+NavAlpha.m in Sources */,
 				AE35B1841F02388B0062B3E8 /* HomeWebView.m in Sources */,
 				AE35B1811F02388B0062B3E8 /* Message.m in Sources */,
@@ -1899,6 +1930,7 @@
 				AE35B1691F02388B0062B3E8 /* HeaderView_Home.m in Sources */,
 				AE35B1881F02388B0062B3E8 /* AddressVC.m in Sources */,
 				AE35B1901F02388B0062B3E8 /* QfCfCell.m in Sources */,
+				AE64140A1F04DE8E000E5A85 /* NSString+Judge.m in Sources */,
 				AE35B1771F02388B0062B3E8 /* GoodsDynamicCell.m in Sources */,
 				AE35B0971F0234690062B3E8 /* main.m in Sources */,
 				AE35B2B51F0238E60062B3E8 /* MMSelectedPath.m in Sources */,

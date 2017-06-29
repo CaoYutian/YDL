@@ -49,6 +49,7 @@
 #import "UIViewExt.h"
 #import "UIImage+Additions.h"
 #import "UIView+Tap.h"
+#import "NSString+Judge.h"
 
 #import "AppCommon.h"
 #import "ComColorManager.h"

@@ -7,12 +7,11 @@
 //
 
 #import "LogInVC.h"
-#import "LoginTranslation.h"
-#import "HomeVC.h"
+#import "logInView.h"
 
-@interface LogInVC ()<UIViewControllerTransitioningDelegate>
-@property (nonatomic, strong) UIButton *logInBtn;
-@property (nonatomic, strong) LoginTranslation *login;
+#import "ForgotPwVC.h"
+#import "RegisterVC.h"
+@interface LogInVC ()
 
 
 @end
@@ -22,61 +21,56 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [self resignFirstResponder];
 }
 
 - (void)SetUpUI {
     
-    [CYTUtiltyHelper createImageViewWithFrame:CGRectMake(0, 0, CYTMainScreen_WIDTH, CYTMainScreen_HEIGHT) imageName:@"background.jpg" SuperView:self.view];
+    logInView *logInV = [[logInView alloc] initWithFrame:self.view.bounds];
+    [self.view addSubview:logInV];
     
-    [CYTUtiltyHelper addbuttonWithRect:CGRectMake(FitwidthRealValue(13), FitheightRealValue(18), 44, 44) NormalbgImageStr:@"icon_back" highLightbgimageStr:@"icon_back" tag:500 SuperView:self.view buttonTarget:self Action:@selector(back:) ImageEdgeInsets:UIEdgeInsetsMake(0, -18, 0, 0)];
-
-    self.logInBtn = [[UIButton alloc] initWithFrame:CGRectMake(FitwidthRealValue(80), CYTMainScreen_HEIGHT - FitheightRealValue(120), CYTMainScreen_WIDTH - FitwidthRealValue(160), FitheightRealValue(40))];
-    [self.logInBtn setTitle:@"Sign In" forState:UIControlStateNormal];
-    [self.logInBtn setTitleColor:whiteColor forState:UIControlStateNormal];
-    self.logInBtn.backgroundColor = NavigationBarBackgroundColor;
-    self.logInBtn.layer.cornerRadius = FitheightRealValue(20);
-    self.logInBtn.layer.masksToBounds = YES;
-    [self.logInBtn addTarget:self action:@selector(logInAction:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:self.logInBtn];
+    [logInV setClickBlock:^(NSString *accountText, NSString *passwordText) {
+        [self logInClickaccount:accountText password:passwordText];
+    }];
     
+    [logInV callBack:^(NSInteger index) {
+        switch (index) {
+            case 1:
+                [self registerAction];
+                break;
+                
+            case 2:
+                [self forgotPwAction];
+                break;
+                
+            case 3:
+                [self backClick];
+                break;
+        }
+    }];
 }
 
-- (void)logInAction:(UIButton *)Btn {
-    
-    HomeVC *homeVc = [[HomeVC alloc] initWithNibName:nil bundle:nil];
-    homeVc.transitioningDelegate = self;
-    [self presentVc:homeVc];
-    
-    [self performSelector:@selector(finishTransition) withObject:nil afterDelay:1.5];
+#pragma mark 登录
+- (void)logInClickaccount:(NSString *)account password:(NSString *)password {
+    NSLog(@"点击了登录按钮accountText = %@   passwordText = %@",account,password);
 }
 
-- (void)finishTransition {
-    [self.login stopAnimation];
+#pragma mark 注册
+- (void)registerAction {
+    [self presentVc:[RegisterVC new]];
 }
 
-- (void)back:(UIButton *)btn {
-    
+#pragma mark 忘记密码
+- (void)forgotPwAction {
+    [self presentVc:[ForgotPwVC new]];
+}
+
+#pragma mark 返回
+- (void)backClick {
     [self dismiss];
-    
-}
-
-#pragma mark UIViewControllerTransitioningDelegate
-- (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
-    self.login.reverse = YES;
-    return self.login;
-}
-
-- (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
-    self.login.reverse = NO;
-    return self.login;
-}
-
-- (LoginTranslation *)login{
-    if (!_login) {
-        _login = [[LoginTranslation alloc] initWithView:self.logInBtn];
-    }
-    return _login;
 }
 
 @end

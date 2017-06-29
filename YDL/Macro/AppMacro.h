@@ -23,7 +23,6 @@ typedef void (^VoidBlock)();
 #define locationManager [LocationManager sharedInstance]
 
 
-
 //----------------------------------- sdk配置 ------------------------------------
 #define BAIDU_MAP_KEY       @"D3MpXiryyN1wT3UhGDffk8Wcn55ciDkV"
 #define HUANXIN_IM_KEY      @"anya18701208276#huanxintongxun"
