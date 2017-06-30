@@ -43,14 +43,13 @@
     return self;
 }
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"详细地址";
     [self.view addSubview:self.tableView];
     WS(weakSelf);
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(weakSelf.view).insets(UIEdgeInsetsMake(64, 0, 50, 0));
+        make.edges.equalTo(weakSelf.view).insets(UIEdgeInsetsMake(64, 0, 0, 0));
     }];
     
     UIView *footerView  = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CYTMainScreen_WIDTH, 100)];

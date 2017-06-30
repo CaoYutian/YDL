@@ -70,6 +70,13 @@ static char TAG_ACTIVITY_SHOW;
                     return;
                 }
                 else if (image) {
+                    
+                    CATransition *animation = [CATransition animation];
+                    animation.duration = .85f;
+                    animation.type = kCATransitionFade;
+                    animation.removedOnCompletion = YES;
+                    [wself.layer addAnimation:animation forKey:@"transition"];
+                    
                     wself.image = image;
                     [wself setNeedsLayout];
                 } else {
@@ -83,6 +90,7 @@ static char TAG_ACTIVITY_SHOW;
                 }
             });
         }];
+        [self.layer removeAnimationForKey:@"transition"];
         [self sd_setImageLoadOperation:operation forKey:@"UIImageViewImageLoad"];
     } else {
         dispatch_main_async_safe(^{

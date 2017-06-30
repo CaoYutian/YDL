@@ -21,7 +21,6 @@
 
 #import "GoodsDynamicCell.h"
 #import "HeaderView_Home.h"
-
 @interface HomeVC ()<UITableViewDelegate,UITableViewDataSource>{
     CGFloat Alpha;
 }
@@ -39,16 +38,11 @@
 
 @implementation HomeVC
 
-- (void)viewWillAppear:(BOOL)animated {
-    self.automaticallyAdjustsScrollViewInsets = NO;
-    
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navTintColor = [UIColor grayColor];
     self.navAlpha = 0;
-    
+    self.automaticallyAdjustsScrollViewInsets = NO;
+
     self.homeRequest = [[HomeRequest alloc] initWithDelegate:self paramSource:self];
     [self.homeRequest loadDataWithHUDOnView:self.view];
     

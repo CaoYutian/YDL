@@ -11,6 +11,8 @@
 		AE19D6431F05F1D200F53096 /* AppDelegate+UMeng.m in Sources */ = {isa = PBXBuildFile; fileRef = AE19D6421F05F1D200F53096 /* AppDelegate+UMeng.m */; };
 		AE19D6471F05FACF00F53096 /* libUMessage_Sdk_1.5.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE19D6451F05FACF00F53096 /* libUMessage_Sdk_1.5.0.a */; };
 		AE19D6491F05FAF800F53096 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE19D6481F05FAF800F53096 /* UserNotifications.framework */; };
+		AE19D6521F06351E00F53096 /* UINavigationBar+NavAlpha.m in Sources */ = {isa = PBXBuildFile; fileRef = AE19D64F1F06351E00F53096 /* UINavigationBar+NavAlpha.m */; };
+		AE19D6531F06351E00F53096 /* UINavigationController+NavAlpha.m in Sources */ = {isa = PBXBuildFile; fileRef = AE19D6511F06351E00F53096 /* UINavigationController+NavAlpha.m */; };
 		AE35B0971F0234690062B3E8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AE35B0961F0234690062B3E8 /* main.m */; };
 		AE35B0A01F0234690062B3E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE35B09E1F0234690062B3E8 /* Main.storyboard */; };
 		AE35B0A21F0234690062B3E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE35B0A11F0234690062B3E8 /* Assets.xcassets */; };
@@ -23,8 +25,6 @@
 		AE35B1621F02388A0062B3E8 /* BaseTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = AE35B0C61F02388A0062B3E8 /* BaseTableViewDataSource.m */; };
 		AE35B1631F02388A0062B3E8 /* BaseTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AE35B0C81F02388A0062B3E8 /* BaseTableViewDelegate.m */; };
 		AE35B1641F02388B0062B3E8 /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AE35B0CA1F02388A0062B3E8 /* BaseVC.m */; };
-		AE35B1651F02388B0062B3E8 /* UINavigationBar+NavAlpha.m in Sources */ = {isa = PBXBuildFile; fileRef = AE35B0CC1F02388A0062B3E8 /* UINavigationBar+NavAlpha.m */; };
-		AE35B1661F02388B0062B3E8 /* UINavigationController+NavAlpha.m in Sources */ = {isa = PBXBuildFile; fileRef = AE35B0CE1F02388A0062B3E8 /* UINavigationController+NavAlpha.m */; };
 		AE35B1671F02388B0062B3E8 /* YQBaseNavC.m in Sources */ = {isa = PBXBuildFile; fileRef = AE35B0D01F02388A0062B3E8 /* YQBaseNavC.m */; };
 		AE35B1681F02388B0062B3E8 /* YQBaseTabBarC.m in Sources */ = {isa = PBXBuildFile; fileRef = AE35B0D21F02388A0062B3E8 /* YQBaseTabBarC.m */; };
 		AE35B1691F02388B0062B3E8 /* HeaderView_Home.m in Sources */ = {isa = PBXBuildFile; fileRef = AE35B0D71F02388A0062B3E8 /* HeaderView_Home.m */; };
@@ -187,6 +187,10 @@
 		AE19D6451F05FACF00F53096 /* libUMessage_Sdk_1.5.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMessage_Sdk_1.5.0.a; sourceTree = "<group>"; };
 		AE19D6461F05FACF00F53096 /* UMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMessage.h; sourceTree = "<group>"; };
 		AE19D6481F05FAF800F53096 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		AE19D64E1F06351E00F53096 /* UINavigationBar+NavAlpha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+NavAlpha.h"; sourceTree = "<group>"; };
+		AE19D64F1F06351E00F53096 /* UINavigationBar+NavAlpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+NavAlpha.m"; sourceTree = "<group>"; };
+		AE19D6501F06351E00F53096 /* UINavigationController+NavAlpha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+NavAlpha.h"; sourceTree = "<group>"; };
+		AE19D6511F06351E00F53096 /* UINavigationController+NavAlpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+NavAlpha.m"; sourceTree = "<group>"; };
 		AE35B0921F0234690062B3E8 /* YDL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YDL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE35B0961F0234690062B3E8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AE35B09F1F0234690062B3E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -215,10 +219,6 @@
 		AE35B0C81F02388A0062B3E8 /* BaseTableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewDelegate.m; sourceTree = "<group>"; };
 		AE35B0C91F02388A0062B3E8 /* BaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseVC.h; sourceTree = "<group>"; };
 		AE35B0CA1F02388A0062B3E8 /* BaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseVC.m; sourceTree = "<group>"; };
-		AE35B0CB1F02388A0062B3E8 /* UINavigationBar+NavAlpha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+NavAlpha.h"; sourceTree = "<group>"; };
-		AE35B0CC1F02388A0062B3E8 /* UINavigationBar+NavAlpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+NavAlpha.m"; sourceTree = "<group>"; };
-		AE35B0CD1F02388A0062B3E8 /* UINavigationController+NavAlpha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+NavAlpha.h"; sourceTree = "<group>"; };
-		AE35B0CE1F02388A0062B3E8 /* UINavigationController+NavAlpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+NavAlpha.m"; sourceTree = "<group>"; };
 		AE35B0CF1F02388A0062B3E8 /* YQBaseNavC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQBaseNavC.h; sourceTree = "<group>"; };
 		AE35B0D01F02388A0062B3E8 /* YQBaseNavC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQBaseNavC.m; sourceTree = "<group>"; };
 		AE35B0D11F02388A0062B3E8 /* YQBaseTabBarC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQBaseTabBarC.h; sourceTree = "<group>"; };
@@ -559,6 +559,17 @@
 			path = UMessage_Sdk_1.5.0;
 			sourceTree = "<group>";
 		};
+		AE19D64D1F06351E00F53096 /* UINavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				AE19D64E1F06351E00F53096 /* UINavigationBar+NavAlpha.h */,
+				AE19D64F1F06351E00F53096 /* UINavigationBar+NavAlpha.m */,
+				AE19D6501F06351E00F53096 /* UINavigationController+NavAlpha.h */,
+				AE19D6511F06351E00F53096 /* UINavigationController+NavAlpha.m */,
+			);
+			path = UINavigationController;
+			sourceTree = "<group>";
+		};
 		AE35B0891F0234690062B3E8 = {
 			isa = PBXGroup;
 			children = (
@@ -643,10 +654,6 @@
 				AE35B0C01F02388A0062B3E8 /* BaseTableView */,
 				AE35B0C91F02388A0062B3E8 /* BaseVC.h */,
 				AE35B0CA1F02388A0062B3E8 /* BaseVC.m */,
-				AE35B0CB1F02388A0062B3E8 /* UINavigationBar+NavAlpha.h */,
-				AE35B0CC1F02388A0062B3E8 /* UINavigationBar+NavAlpha.m */,
-				AE35B0CD1F02388A0062B3E8 /* UINavigationController+NavAlpha.h */,
-				AE35B0CE1F02388A0062B3E8 /* UINavigationController+NavAlpha.m */,
 				AE35B0CF1F02388A0062B3E8 /* YQBaseNavC.h */,
 				AE35B0D01F02388A0062B3E8 /* YQBaseNavC.m */,
 				AE35B0D11F02388A0062B3E8 /* YQBaseTabBarC.h */,
@@ -855,16 +862,16 @@
 		AE35B1181F02388A0062B3E8 /* Address */ = {
 			isa = PBXGroup;
 			children = (
-				AE35B1191F02388A0062B3E8 /* AddressMapCell.h */,
-				AE35B11A1F02388A0062B3E8 /* AddressMapCell.m */,
-				AE35B11B1F02388A0062B3E8 /* AddressMapViewController.h */,
-				AE35B11C1F02388A0062B3E8 /* AddressMapViewController.m */,
 				AE35B11D1F02388A0062B3E8 /* AddressVC.h */,
 				AE35B11E1F02388A0062B3E8 /* AddressVC.m */,
 				AE35B11F1F02388A0062B3E8 /* ApplyAddressVC.h */,
 				AE35B1201F02388A0062B3E8 /* ApplyAddressVC.m */,
 				AE35B1211F02388A0062B3E8 /* DetailAddressVC.h */,
 				AE35B1221F02388A0062B3E8 /* DetailAddressVC.m */,
+				AE35B11B1F02388A0062B3E8 /* AddressMapViewController.h */,
+				AE35B11C1F02388A0062B3E8 /* AddressMapViewController.m */,
+				AE35B1191F02388A0062B3E8 /* AddressMapCell.h */,
+				AE35B11A1F02388A0062B3E8 /* AddressMapCell.m */,
 			);
 			path = Address;
 			sourceTree = "<group>";
@@ -1131,6 +1138,7 @@
 		AE35B1CC1F0238E60062B3E8 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				AE19D64D1F06351E00F53096 /* UINavigationController */,
 				AE35B1CD1F0238E60062B3E8 /* MBProgressHUD */,
 				AE35B1D01F0238E60062B3E8 /* SearchBar */,
 				AE35B1D31F0238E60062B3E8 /* UIBarButtonItem */,
@@ -1809,7 +1817,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE35B19C1F02388B0062B3E8 /* BaseAPIResponse.m in Sources */,
-				AE35B1661F02388B0062B3E8 /* UINavigationController+NavAlpha.m in Sources */,
 				AE35B1A01F02388B0062B3E8 /* LogInAPIRequest.m in Sources */,
 				AE35B19D1F02388B0062B3E8 /* PageAPIRequest.m in Sources */,
 				AE35B2AD1F0238E60062B3E8 /* UIColor+ComboBoxExtension.m in Sources */,
@@ -1825,6 +1832,7 @@
 				AE35B0B71F02381F0062B3E8 /* AppDelegate.m in Sources */,
 				AE35B2B41F0238E60062B3E8 /* MMSingleItem.m in Sources */,
 				AE35B2BB1F0238E60062B3E8 /* MMHeaderView.m in Sources */,
+				AE19D6521F06351E00F53096 /* UINavigationBar+NavAlpha.m in Sources */,
 				AE35B2C01F0238E60062B3E8 /* LLNoDataView.m in Sources */,
 				AE35B16A1F02388B0062B3E8 /* GoodsCell_Mall.m in Sources */,
 				AE35B2C51F0238E60062B3E8 /* LargeClassMenuView.m in Sources */,
@@ -1886,6 +1894,7 @@
 				AE35B29B1F0238E60062B3E8 /* UIView+Tap.m in Sources */,
 				AE35B2B01F0238E60062B3E8 /* MMAlternativeItem.m in Sources */,
 				AE35B2A81F0238E60062B3E8 /* HeaderOfmine.m in Sources */,
+				AE19D6531F06351E00F53096 /* UINavigationController+NavAlpha.m in Sources */,
 				AE35B2991F0238E60062B3E8 /* UIView+DCAnimationKit.m in Sources */,
 				AE35B1681F02388B0062B3E8 /* YQBaseTabBarC.m in Sources */,
 				AE35B29A1F0238E60062B3E8 /* UIView+frame.m in Sources */,
@@ -1914,7 +1923,6 @@
 				AE6414001F04A370000E5A85 /* logInView.m in Sources */,
 				AE35B2BF1F0238E60062B3E8 /* MMSingleFitlerView.m in Sources */,
 				AE6414061F04DB18000E5A85 /* RegisterVC.m in Sources */,
-				AE35B1651F02388B0062B3E8 /* UINavigationBar+NavAlpha.m in Sources */,
 				AE35B1841F02388B0062B3E8 /* HomeWebView.m in Sources */,
 				AE35B1811F02388B0062B3E8 /* Message.m in Sources */,
 				AE35B2BD1F0238E60062B3E8 /* MMMultiFitlerView.m in Sources */,
