@@ -16,7 +16,7 @@
 #import "GoodsCell_Mall.h"
 #import "LNGInfoCell.h"
 #import "LNGCarInfoCell.h"
-
+#import "UMMobClick/MobClick.h"
 @interface GoodsDetailVC ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *goodDetailTabbleView;
@@ -27,11 +27,20 @@
 
 @implementation GoodsDetailVC
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [MobClick beginLogPageView:@"GoodsDetailVC"];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"商品详情";
     self.automaticallyAdjustsScrollViewInsets = NO;
     
+}
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [MobClick endLogPageView:@"GoodsDetailVC"];
 }
 
 - (void)SetUpUI {
@@ -181,6 +190,7 @@
 
 #pragma mark 立即购买
 - (void)buyNow {
+    [MobClick event:@"buyNow"];
     [self pushVc:[CheckOrderInfoVC new]];
 }
 

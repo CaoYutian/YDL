@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6BF0E8E84E919479A2ADD01A /* libPods-YDL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F08FD89A22CFE6D21D2A8AC /* libPods-YDL.a */; };
+		AE19D6431F05F1D200F53096 /* AppDelegate+UMeng.m in Sources */ = {isa = PBXBuildFile; fileRef = AE19D6421F05F1D200F53096 /* AppDelegate+UMeng.m */; };
 		AE35B0971F0234690062B3E8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AE35B0961F0234690062B3E8 /* main.m */; };
 		AE35B0A01F0234690062B3E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE35B09E1F0234690062B3E8 /* Main.storyboard */; };
 		AE35B0A21F0234690062B3E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE35B0A11F0234690062B3E8 /* Assets.xcassets */; };
@@ -179,6 +180,8 @@
 /* Begin PBXFileReference section */
 		0F08FD89A22CFE6D21D2A8AC /* libPods-YDL.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YDL.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		788EA7D9D728DEBFFF7B2BD7 /* Pods-YDL.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YDL.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YDL/Pods-YDL.debug.xcconfig"; sourceTree = "<group>"; };
+		AE19D6411F05F1D200F53096 /* AppDelegate+UMeng.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+UMeng.h"; sourceTree = "<group>"; };
+		AE19D6421F05F1D200F53096 /* AppDelegate+UMeng.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+UMeng.m"; sourceTree = "<group>"; };
 		AE35B0921F0234690062B3E8 /* YDL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YDL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE35B0961F0234690062B3E8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AE35B09F1F0234690062B3E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -598,6 +601,8 @@
 				AE35B0B01F02381F0062B3E8 /* AppDelegate+IM.m */,
 				AE35B0B11F02381F0062B3E8 /* AppDelegate+ThreeDTouch.h */,
 				AE35B0B21F02381F0062B3E8 /* AppDelegate+ThreeDTouch.m */,
+				AE19D6411F05F1D200F53096 /* AppDelegate+UMeng.h */,
+				AE19D6421F05F1D200F53096 /* AppDelegate+UMeng.m */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -1828,6 +1833,7 @@
 				AE35B17C1F02388B0062B3E8 /* LNGQualityReportVC.m in Sources */,
 				AE35B2A71F0238E60062B3E8 /* GuideView.m in Sources */,
 				AE35B1931F02388B0062B3E8 /* ChangePasswordVC.m in Sources */,
+				AE19D6431F05F1D200F53096 /* AppDelegate+UMeng.m in Sources */,
 				AE35B2911F0238E60062B3E8 /* NSObject+Additions.m in Sources */,
 				AE35B1871F02388B0062B3E8 /* AddressMapViewController.m in Sources */,
 				AE35B29D1F0238E60062B3E8 /* UIViewExt.m in Sources */,

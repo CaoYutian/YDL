@@ -11,4 +11,5 @@ pod 'IQKeyboardManager', '~> 4.0.7'
 pod 'BaiduMapKit', '~> 3.3.0'
 pod 'HyphenateLite', '~> 3.3.2'
 pod 'EaseUILite', :git =>'https://github.com/easemob/easeui-ios-hyphenate-cocoapods.git' 
+pod 'UMengAnalytics', '~> 4.2.4'
 end

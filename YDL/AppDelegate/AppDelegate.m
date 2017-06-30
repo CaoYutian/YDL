@@ -14,6 +14,7 @@
 
 #import "AppDelegate+ThreeDTouch.h"
 #import "AppDelegate+IM.h"
+#import "AppDelegate+UMeng.h"
 
 #import <BaiduMapAPI_Base/BMKBaseComponent.h>
 
@@ -65,6 +66,9 @@
     
 //-----------------环信-----------------
     [self IMinit];
+    
+//-----------------UMeng-----------------
+    [self UMengAnalyticsInit];
     
     return YES;
 }
