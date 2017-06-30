@@ -7,9 +7,14 @@
 //
 
 #import "AppDelegate.h"
+#import "UMMobClick/MobClick.h"
+#import "UMessage.h"
+#import <UserNotifications/UserNotifications.h>
 
-@interface AppDelegate (UMeng)
+@interface AppDelegate (UMeng)<UNUserNotificationCenterDelegate>
 
 - (void)UMengAnalyticsInit;
+
+- (void)UMengPushdidFinishLaunchingWithOptions:(NSDictionary *)launchOptions;
 
 @end

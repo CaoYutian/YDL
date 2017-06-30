@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <HyphenateLite/HyphenateLite.h>
 
 @interface AppDelegate (IM)
 

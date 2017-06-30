@@ -69,6 +69,7 @@
     
 //-----------------UMeng-----------------
     [self UMengAnalyticsInit];
+    [self UMengPushdidFinishLaunchingWithOptions:launchOptions];
     
     return YES;
 }

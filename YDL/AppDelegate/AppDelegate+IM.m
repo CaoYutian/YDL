@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate+IM.h"
-#import <HyphenateLite/HyphenateLite.h>
 //测试版本！！！
 @implementation AppDelegate (IM)
 

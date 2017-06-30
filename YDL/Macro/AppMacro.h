@@ -27,6 +27,7 @@ typedef void (^VoidBlock)();
 #define BAIDU_MAP_KEY       @"D3MpXiryyN1wT3UhGDffk8Wcn55ciDkV"
 #define HUANXIN_IM_KEY      @"anya18701208276#huanxintongxun"
 #define UMENG_APP_KEY       @"5955b5eb7f2c74204c0010ca"
+#define UMENG_Push_SECRET   @"xrgm5tuvs1akda3gwvppwstjuoeywbnx"
 
 
 
