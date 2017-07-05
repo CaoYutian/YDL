@@ -29,7 +29,4 @@ typedef void (^VoidBlock)();
 #define UMENG_APP_KEY       @"5955b5eb7f2c74204c0010ca"
 #define UMENG_Push_SECRET   @"xrgm5tuvs1akda3gwvppwstjuoeywbnx"
 
-
-
-
 #endif /* AppMacro_h */

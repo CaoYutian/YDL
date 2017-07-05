@@ -23,7 +23,6 @@
 #define MARGIN_SPACE    10
 
 
-
 #define FONT_LARGE      ([[UIDevice currentDevice].systemVersion floatValue] >= 9.0)?[UIFont fontWithName:@"STHeitiSC-Light" size:18]:\
 [UIFont systemFontOfSize:18]
 #define FONT_NORMAL     ([[UIDevice currentDevice].systemVersion floatValue] >= 9.0)?[UIFont fontWithName:@"STHeitiSC-Light" size:14]:\

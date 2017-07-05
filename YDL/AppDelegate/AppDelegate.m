@@ -17,6 +17,7 @@
 #import "AppDelegate+UMeng.h"
 
 #import <BaiduMapAPI_Base/BMKBaseComponent.h>
+#import "AFNetworkActivityIndicatorManager.h"
 
 @interface AppDelegate (){
     BMKMapManager *_mapManager;
@@ -43,6 +44,9 @@
     [self.window makeKeyAndVisible];
     self.window.backgroundColor = MainBackgroundColor;
     [self showMainView];
+    
+    /** 当网络请求的时候，状态栏上的小菊花就会开始转 */
+    [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
     
 //-----------------引导页-----------------
     [self loadGuideView];
