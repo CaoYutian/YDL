@@ -182,7 +182,7 @@ static const CGFloat kKTDropdownMenuViewAutoHideHeight = 30;
 {
     self.titleButton.enabled = NO;
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, kKTDropdownMenuViewHeaderHeight)];
-    headerView.backgroundColor = WHITECOLOR;
+    headerView.backgroundColor = whiteColor;
     self.tableView.tableHeaderView = headerView;
     [self.tableView layoutIfNeeded];
     
@@ -246,7 +246,7 @@ static const CGFloat kKTDropdownMenuViewAutoHideHeight = 30;
 {
     if (!_cellColor)
     {
-        _cellColor = WHITECOLOR;
+        _cellColor = whiteColor;
     }
     
     return _cellColor;
@@ -276,7 +276,7 @@ static const CGFloat kKTDropdownMenuViewAutoHideHeight = 30;
 {
     if (!_cellAccessoryCheckmarkColor)
     {
-        _cellAccessoryCheckmarkColor = WHITECOLOR;
+        _cellAccessoryCheckmarkColor = whiteColor;
     }
     
     return _cellAccessoryCheckmarkColor;
@@ -328,7 +328,7 @@ static const CGFloat kKTDropdownMenuViewAutoHideHeight = 30;
         [_titleButton addTarget:self action:@selector(handleTapOnTitleButton:) forControlEvents:UIControlEventTouchUpInside];
         [_titleButton.titleLabel setFont:[UIFont systemFontOfSize:16]];
         _titleButton.titleLabel.textAlignment = NSTextAlignmentCenter;
-        [_titleButton setTitleColor:BLACKCOLOR forState:UIControlStateNormal];
+        [_titleButton setTitleColor:blackColor forState:UIControlStateNormal];
     }
     
     return _titleButton;
@@ -379,7 +379,7 @@ static const CGFloat kKTDropdownMenuViewAutoHideHeight = 30;
     if (!_backgroundView)
     {
         _backgroundView = [[UIView alloc] init];
-        _backgroundView.backgroundColor = BLACKCOLOR;
+        _backgroundView.backgroundColor = blackColor;
         _backgroundView.alpha = self.backgroundAlpha;
     }
     
