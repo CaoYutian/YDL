@@ -35,7 +35,7 @@ static const CGFloat kKTDropdownMenuViewAutoHideHeight = 30;
         _backgroundAlpha = 0.3;
         _cellHeight = 44;
         _isMenuShow = NO;
-//        _selectedIndex = 0;
+        _selectedIndex = 0;
         _titles = titles;
         [self addSubview:self.titleButton];
         [self addSubview:self.arrowImageView];
@@ -182,7 +182,7 @@ static const CGFloat kKTDropdownMenuViewAutoHideHeight = 30;
 {
     self.titleButton.enabled = NO;
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, kKTDropdownMenuViewHeaderHeight)];
-    headerView.backgroundColor = whiteColor;
+    headerView.backgroundColor = WHITECOLOR;
     self.tableView.tableHeaderView = headerView;
     [self.tableView layoutIfNeeded];
     
@@ -246,7 +246,7 @@ static const CGFloat kKTDropdownMenuViewAutoHideHeight = 30;
 {
     if (!_cellColor)
     {
-        _cellColor = whiteColor;
+        _cellColor = WHITECOLOR;
     }
     
     return _cellColor;
@@ -276,7 +276,7 @@ static const CGFloat kKTDropdownMenuViewAutoHideHeight = 30;
 {
     if (!_cellAccessoryCheckmarkColor)
     {
-        _cellAccessoryCheckmarkColor = whiteColor;
+        _cellAccessoryCheckmarkColor = WHITECOLOR;
     }
     
     return _cellAccessoryCheckmarkColor;
@@ -328,7 +328,7 @@ static const CGFloat kKTDropdownMenuViewAutoHideHeight = 30;
         [_titleButton addTarget:self action:@selector(handleTapOnTitleButton:) forControlEvents:UIControlEventTouchUpInside];
         [_titleButton.titleLabel setFont:[UIFont systemFontOfSize:16]];
         _titleButton.titleLabel.textAlignment = NSTextAlignmentCenter;
-        [_titleButton setTitleColor:whiteColor forState:UIControlStateNormal];
+        [_titleButton setTitleColor:BLACKCOLOR forState:UIControlStateNormal];
     }
     
     return _titleButton;
@@ -379,7 +379,7 @@ static const CGFloat kKTDropdownMenuViewAutoHideHeight = 30;
     if (!_backgroundView)
     {
         _backgroundView = [[UIView alloc] init];
-        _backgroundView.backgroundColor = blackColor;
+        _backgroundView.backgroundColor = BLACKCOLOR;
         _backgroundView.alpha = self.backgroundAlpha;
     }
     

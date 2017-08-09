@@ -24,7 +24,6 @@
 }
 
 @property (nonatomic, strong) YQBaseTabBarC *tabBar;
-
 @property (nonatomic, strong) VersionManager *versionManager;  //版本提示
 @property (nonatomic, strong) GuideView *guide;                //引导页
 

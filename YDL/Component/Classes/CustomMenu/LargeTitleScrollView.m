@@ -7,6 +7,7 @@
 //
 
 #import "LargeTitleScrollView.h"
+#import "Masonry.h"
 
 #define BTNWIDTH FitwidthRealValue(80.0)
 
@@ -39,6 +40,7 @@
     for (int i = 0; i < [self.headArray count]; i++) {
         
         UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
+        button.titleLabel.font = FitFont(14);
         button.frame = CGRectMake(0 + BTNWIDTH*i, 0, BTNWIDTH, FitheightRealValue(40));
         button.titleLabel.font = FitFont(14);
         [button setTitle:[self.headArray objectAtIndex:i] forState:UIControlStateNormal];

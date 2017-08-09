@@ -40,6 +40,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.navAlpha = 0;
     self.automaticallyAdjustsScrollViewInsets = NO;
 
